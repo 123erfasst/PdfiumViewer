@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
@@ -60,9 +60,6 @@ namespace PdfiumViewer
 
             using (var pageData = new PageData(_document, _form, pageNumber))
             {
-                if (renderFormFill)
-                    flags &= ~NativeMethods.FPDF.ANNOT;
-
                 NativeMethods.FPDF_RenderPageBitmap(bitmapHandle, pageData.Page, boundsOriginX, boundsOriginY, boundsWidth, boundsHeight, rotate, flags);
 
                 if (renderFormFill)

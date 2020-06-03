@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿﻿using System;
 
 namespace PdfiumViewer
 {
@@ -49,6 +47,10 @@ namespace PdfiumViewer
         /// <summary>
         /// Correct height/width for DPI.
         /// </summary>
-        CorrectFromDpi = 0x2000
+        CorrectFromDpi = 0x2000,
+        /// <summary>
+        /// Set if forms are to be rendered.
+        /// </summary>
+        FormFill = 0x4000
     }
 }

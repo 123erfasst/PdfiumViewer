@@ -1,4 +1,4 @@
-﻿using System;
+﻿﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -336,7 +336,7 @@ namespace PdfiumViewer
                         0, 0, width, height,
                         (int)rotate,
                         FlagsToFPDFFlags(flags),
-                        (flags & PdfRenderFlags.Annotations) != 0
+                        (flags & PdfRenderFlags.FormFill) != 0
                     );
 
                     if (!success)
@@ -357,7 +357,7 @@ namespace PdfiumViewer
 
         private NativeMethods.FPDF FlagsToFPDFFlags(PdfRenderFlags flags)
         {
-            return (NativeMethods.FPDF)(flags & ~(PdfRenderFlags.Transparent | PdfRenderFlags.CorrectFromDpi));
+            return (NativeMethods.FPDF)(flags & ~(PdfRenderFlags.Transparent | PdfRenderFlags.CorrectFromDpi | PdfRenderFlags.FormFill));
         }
 
         /// <summary>
